@@ -10,7 +10,13 @@ $headerColour: #6990e0
   margin: auto
   padding-top: 25px
   color: rgb(214, 214, 214)
-
+  position: relative
+  
+.newshub_flex
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  
 .newshub a
   text-decoration: none
   color: $headerColour
@@ -33,31 +39,35 @@ $headerColour: #6990e0
 #sidebar_left 
   width: 250px
   height: 975px
-  margin-left: -258px
-  float: left
-  
+  left: -258px
+  top: 25px
+  position: absolute
 #sidebar_right 
   width: 250px
   height: 975px
-  float: right
-  margin-right: -258px
-  top: 125px
+  right: -258px
+  top: 25px
+  position: absolute
 #sidebar_middle
   width: 299px
   height: 602px
-  float: left
+  
 
 //columns
 .column1 
   max-width: 744px
-  float: left
+@media screen and (max-width: 760px) 
+  .column1 
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
 .column3 
   width: 210px
   overflow: hidden
   margin-right: 15px
   margin-left: 2px
   font-size: 15px
-  float: left
+  
 
 //badges
 .article_common_content span
@@ -188,24 +198,12 @@ $headerColour: #6990e0
   width: 100%
 .article_column3 a:hover 
   text-decoration: underline
-.article_column3_h 
-  margin-bottom: 10px
-  background-image: url(/images/newshub-highlight.jpg)
-  background-repeat: no-repeat
-.article_column3_h a
-  color: rgb(226, 155, 4)
-  display: block
-  margin-left: 9px
-div.article_column3_h img 
-  width: 100%
-.article_column3_h a:hover
-  text-decoration: underline
 
 .golden a
   color: rgb(255, 174, 0)
 
 .endline
-  width: 1270px
+  max-width: 1270px
   clear: both
   
   
