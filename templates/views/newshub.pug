@@ -9,18 +9,19 @@ block content
           a(href=content.topbar.linkUrl)
             div(style="background:#" + content.topbar.backgroundcolor)
               | !{ content.topbar.paragraph }
+              
       .newshub_flex
         // sidebar left
         if content.sidebarLeft
           #sidebar_left(style="background:#" + content.sidebarLeft.backgroundcolor)
             a(href=content.sidebarLeft.linkUrl)
-              img(src=content.sidebarLeft.imageUrl alt="")
+              img(src=content.sidebarLeft.imageUrl)
 
         // sidebar right
         if content.sidebarRight
           #sidebar_right(style="background:#" + content.sidebarRight.backgroundcolor)
             a(href=content.sidebarRight.linkUrl)
-              img(src=content.sidebarRight.imageUrl alt="")
+              img(src=content.sidebarRight.imageUrl)
 
         
 
@@ -37,7 +38,7 @@ block content
                     span #{ a.badge }
                 if a.imageUrl
                   a(href=a.linkUrl)
-                    img(src=a.imageUrl alt="")
+                    img(src=a.imageUrl)
                 a(href=a.linkUrl)
                   h2 #{ a.title }
                   if a.subtitle
@@ -55,7 +56,7 @@ block content
                     h3 #{ a.title }
                   if a.imageUrl
                     a(href=a.linkUrl)
-                      img(src=a.imageUrl, alt="")
+                      img(src=a.imageUrl,)
                   | !{ a.paragraph  }
 
         // rightArticles
@@ -67,12 +68,12 @@ block content
                   span #{ a.badge }
               if a.imageUrl
                 a(href=a.linkUrl) 
-                  img(src=a.imageUrl, alt="")
+                  img(src=a.imageUrl,)
               a(href=a.linkUrl) #{ a.title }
 
         // sidebar middle
         if content.sidebarMiddle
           #sidebar_middle
             a(href=content.sidebarMiddle.linkUrl)
-              img(src=content.sidebarMiddle.imageUrl alt="")
+              img(src=content.sidebarMiddle.imageUrl)
           .endline
