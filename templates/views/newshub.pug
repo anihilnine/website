@@ -3,77 +3,77 @@ extends ../layouts/default
 block content
   .newshub_container
     .newshub
+    
       // top bar
       if content.topbar
         .announcement
           a(href=content.topbar.linkUrl)
             div(style="background:#" + content.topbar.backgroundcolor)
               | !{ content.topbar.paragraph }
-              
+
+      // sidebar left
+      if content.sidebarLeft
+        #sidebar_left(style="background:#" + content.sidebarLeft.backgroundcolor)
+          a(href=content.sidebarLeft.linkUrl)
+            img(src=content.sidebarLeft.imageUrl)
+
+      // sidebar right
+      if content.sidebarRight
+        #sidebar_right(style="background:#" + content.sidebarRight.backgroundcolor)
+          a(href=content.sidebarRight.linkUrl)
+            img(src=content.sidebarRight.imageUrl)
+
       .newshub_flex
-        // sidebar left
-        if content.sidebarLeft
-          #sidebar_left(style="background:#" + content.sidebarLeft.backgroundcolor)
-            a(href=content.sidebarLeft.linkUrl)
-              img(src=content.sidebarLeft.imageUrl)
-
-        // sidebar right
-        if content.sidebarRight
-          #sidebar_right(style="background:#" + content.sidebarRight.backgroundcolor)
-            a(href=content.sidebarRight.linkUrl)
-              img(src=content.sidebarRight.imageUrl)
-
-        
 
         // normalArticles 
-        .column1
-        
+        .column_left
           for a in content.normalArticles
-
-            if (a.position=="hero") 
-              // large hero cell
-              .article_hero(class=a.customStyle)
-                if a.badge
-                  .article_badge
-                    span #{ a.badge }
-                if a.imageUrl
-                  a(href=a.linkUrl)
-                    img(src=a.imageUrl)
-                a(href=a.linkUrl)
-                  h2 #{ a.title }
-                  if a.subtitle
-                    h3 #{ a.subtitle }
-                | !{ a.paragraph }
-
-            else
-              // normal cell
-              .article_common
-                .article_common_content(class=a.customStyle)
-                  if a.badge
-                    .article_badge
-                      span #{ a.badge }
-                  a(href=a.linkUrl)
-                    h3 #{ a.title }
-                  if a.imageUrl
-                    a(href=a.linkUrl)
-                      img(src=a.imageUrl,)
-                  | !{ a.paragraph  }
-
-        // rightArticles
-        .column3
-          for a in content.rightArticles
-            .article_column3(class=a.customStyle)
+            // normal cell
+            .normal_cell(class=a.customStyle)
               if a.badge
-                .article_badge
+                .articleBadge
                   span #{ a.badge }
+              if a.title  
+                .articleTitle
+                  span #{ a.title }
               if a.imageUrl
-                a(href=a.linkUrl) 
-                  img(src=a.imageUrl,)
-              a(href=a.linkUrl) #{ a.title }
+                .articleImage
+                  img(src=a.imageUrl)
+              if a.subtitle  
+                .articleSubtitle
+                  span #{ a.subtitle }
+              if a.paragraph  
+                .articleParagraph
+                  | !{ a.paragraph }
+        
+        // rightArticles
+        .column_right
+          for a in content.rightArticles
+            // right cell
+            .right_cell(class=a.customStyle)
+              if a.badge
+                .articleBadge
+                  span #{ a.badge }
+              if a.title  
+                .articleTitle
+                  span #{ a.title }
+              if a.imageUrl
+                .articleImage
+                  img(src=a.imageUrl)
+              if a.subtitle  
+                .articleSubtitle
+                  span #{ a.subtitle }
+              if a.paragraph  
+                .articleParagraph
+                  | !{ a.paragraph }
 
         // sidebar middle
         if content.sidebarMiddle
           #sidebar_middle
             a(href=content.sidebarMiddle.linkUrl)
               img(src=content.sidebarMiddle.imageUrl)
+
+        
+          
           .endline
+

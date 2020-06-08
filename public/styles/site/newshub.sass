@@ -1,5 +1,7 @@
 $headerColour: #6990e0
-  
+$headerFont: 'Electrolize', sans-serif
+$badgeFont: 'Russo One', sans-serif
+
 .newshub_container
   min-height: calc(100vh)
   background-color: #212121
@@ -12,194 +14,170 @@ $headerColour: #6990e0
   color: rgb(214, 214, 214)
   position: relative
   
-.newshub_flex
-  display: flex
-  justify-content: center
-  flex-wrap: wrap
-  
 .newshub a
   text-decoration: none
   color: $headerColour
-.newshub h2
-  font-family: 'Electrolize', sans-serif
-.newshub h3
-  font-family: 'Electrolize', sans-serif
 
 //announcement  
 .announcement 
-  margin-bottom: 15px
-  max-width: 1265px
-  margin-left: 5px
-.announcement p
-  padding: 9px 15px
-  color: rgb(214, 214, 214)
-  font-family: 'Electrolize', sans-serif
+  max-width: 1260px
+  margin: 0px 0px 0px 10px
+  p
+    padding: 9px 15px
+    color: rgb(214, 214, 214)
+    font-family: $headerFont
+    
 
 //sidebars  
 #sidebar_left 
   width: 250px
-  height: 975px
-  left: -258px
+  left: -250px
   top: 25px
   position: absolute
 #sidebar_right 
   width: 250px
-  height: 975px
-  right: -258px
+  right: -260px
   top: 25px
   position: absolute
-#sidebar_middle
-  width: 299px
-  height: 602px
-  
 
-//columns
-.column1 
+//columns flex    
+.newshub_flex
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+.column_left 
   max-width: 744px
 @media screen and (max-width: 760px) 
-  .column1 
+  .column_left 
     display: flex
     justify-content: center
     flex-wrap: wrap
-.column3 
-  width: 210px
-  overflow: hidden
-  margin-right: 15px
-  margin-left: 2px
-  font-size: 15px
-  
-
-//badges
-.article_common_content span
-  background-color: rgb(147, 51, 51)
-  display: inline-block
-  padding: 1px 10px
-  min-width: 60px
-  text-align: center
-  margin-bottom: 5px
-  margin-left: 9px
-  font-size: 13px
-  font-family: 'Russo One', sans-serif
-  
-.article_column3 span
-  background-color: rgb(147, 51, 51)
-  display: inline-block
-  padding: 1px 10px
-  min-width: 60px
-  text-align: center
-  margin-bottom: 5px
-  margin-left: 9px
-  font-size: 13px
-  font-family: 'Russo One', sans-serif
-
-.golden
-  background-image: url(/images/newshub-highlight.jpg)
-  background-repeat: no-repeat
-    
-
-.golden p 
-  color: rgb(179, 178, 113)
-
-.golden h3
-  color: rgb(255, 174, 0)
-
-.golden span
-  background-color: rgb(215, 148, 6)
-  display: inline-block
-  padding: 1px 10px
-  min-width: 60px
-  text-align: center
-  margin-bottom: 5px
-  margin-left: 9px
-  font-size: 13px
-  color: white
-
-
-
-//hero
-.article_hero
-  height: 510px
-  padding-bottom: 0px
-  max-width: 360px
-  margin-bottom: 0px
-  margin-left: 5px
-  margin-right: 7px
-  overflow: hidden
-  float: left
-  clear: left
-.article_hero img
-  max-width: 100%
-.article_hero h2:hover
-  text-decoration: underline
-.article_hero h2
-  color: $headerColour
-  margin-top: 10px
-  margin-bottom: 1px
-  font-size: 30px
-.article_hero h3
-  color: $headerColour
-  margin-top: 4px
-  margin-bottom: 2px
-  font-size: 16px
-
-//badges
-.article_hero span
-  background-color: rgb(147, 51, 51)
-  display: inline-block
-  padding: 1px 10px
-  min-width: 60px
-  text-align: center
-  margin-bottom: 5px
-  font-size: 13px
-  font-family: 'Russo One', sans-serif
-  
+.column_right 
+  width: 227px
+#sidebar_middle
+  width: 299px
 
 //common articles
-.article_common
-  height: 171px
-  width: 364px
-  margin-left: 0px
-  margin-right: 7px
+.normal_cell
+  height: 170px
+  max-width: 372px
+  padding: 0px 0px 0px 10px
+  margin: 0px 0px 10px 0px
   overflow: hidden
   float: left
-.article_common_content
-  float: left
-  width: 356px
-  height: 159px
-  margin-bottom: 8px
-  margin-left: 0px
-  overflow: hidden
-  font-size: 14px
-.article_common_content p
-  margin-top: 0px
-.article_common_content img
-  width: 150px
-  float: left
-  margin-right: 10px
-  margin-left: 9px
-.article_common h3:hover
-  text-decoration: underline
-.article_common h3
-  margin-top: 0px
-  margin-bottom: 5px
-  margin-left: 9px
-  font-size: 17px
-  font-weight: 100
+  &:hover 
+    background-color: black
+  .articleBadge
+    background-color: rgb(147, 51, 51)
+    display: inline-block
+    padding: 1px 10px
+    min-width: 80px
+    text-align: center
+    margin: 0px 0px 5px 0px
+    font-size: 13px
+    font-family: $badgeFont
+  .articleTitle 
+    color: $headerColour
+    font-family: $headerFont
+    font-size: 17px
+    margin: 0px 0px 3px 0px
+  .articleImage 
+    max-width: 150px
+    float: left
+    margin: 0px 10px 0px 0px
+    img 
+      max-width: 150px
+  .articleSubtitle 
+    display: none
+  .articleParagraph 
+    margin: 0px 0px 10px 0px
  
-//column3 articles
-.article_column3
-  margin-bottom: 10px
-.article_column3 a
-  color: $headerColour
-  display: block
-  margin-left: 9px
-.article_column3 img 
-  width: 100%
-.article_column3 a:hover 
-  text-decoration: underline
+//right articles
+.right_cell 
+  width: 227px
+  padding: 0px 10px 0px 10px
+  margin: 0px 0px 10px 0px
+  overflow: hidden
+  display: flex
+  flex-direction: column
+  align-items: baseline
+  &:hover
+    background-color: black
+  .articleBadge
+    background-color: rgb(147, 51, 51)
+    display: block
+    padding: 1px 10px
+    min-width: 80px
+    text-align: center
+    margin: 0px 0px 5px 0px
+    font-size: 13px
+    font-family: $badgeFont
+  .articleTitle
+    color: $headerColour
+    font-family: $headerFont
+    font-size: 15px
+    margin: 0px 0px 3px 0px
+    order: 2
+  .articleImage
+    margin: 0px 10px 0px 0px
+    order: 1
+    img
+      max-width: 217px
+  .articleSubtitle
+    order: 3
+  .articleParagraph
+    order: 4
+    
+//hero
+.styleHero
+  height: 530px
+  padding: 0px 10px 10px 10px
+  margin: 0px 0px 10px 0px
+  float: left
+  display: flex
+  flex-direction: column
+  align-items: baseline
+  .articleBadge
+    min-width: 80px
+  .articleTitle
+    color: $headerColour
+    font-family: $headerFont
+    font-size: 30px
+    margin: 0px 0px 3px 0px
+    order: 2
+  .articleImage
+    order: 1
+    img
+      max-width: 352px
+      order: 1
+  .articleSubtitle
+    display: block
+    color: $headerColour
+    font-family: $headerFont
+    font-size: 16px
+    margin: 0px 0px 2px 0px
+    order: 3
+  .articleParagraph
+    margin: 0px 0px 10px 0px
+    order: 4
 
-.golden a
-  color: rgb(255, 174, 0)
+//nomads
+.styleNomads
+  .articleBadge
+    background-color: #dd7e2e
+
+//golden
+.styleGolden
+  background: url(/images/newshub-highlight.jpg) repeat-y 1px 0px
+  .articleBadge
+    background-color: rgb(215, 148, 6)
+  .articleTitle
+    color: rgb(255, 174, 0)
+  .articleSubtitle
+    color: rgb(255, 174, 0)
+  .articleParagraph
+    color: rgb(179, 178, 113)
+
 
 .endline
   max-width: 1270px
