@@ -74,11 +74,12 @@ $badgeFont: 'Russo One', sans-serif
   .articleImage 
     margin: 0px 10px 0px 0px
 
-  //nomads
+  // nomads
   &.styleNomads
     .articleBadge
       background-color: #dd7e2e
 
+  // golden
   &.styleGolden
     background: url(/images/newshub-highlight.jpg) repeat-y 1px 0px
     .articleBadge
@@ -91,6 +92,13 @@ $badgeFont: 'Russo One', sans-serif
       color: rgb(179, 178, 113)
     a
       color: rgb(255, 174, 0)
+
+  // no titles
+  &.styleNoTitles
+    .articleTitle
+      display: none
+    .articleSubtitle
+      display: none
 
 // left column
 .column_left 
@@ -141,7 +149,11 @@ $badgeFont: 'Russo One', sans-serif
       .articleParagraph
         margin: 0px 0px 10px 0px
         order: 4
-        
+
+      &.styleNoTitles
+        .articleSubtitle
+          display: none
+          
 @media screen and (max-width: 760px) 
   .column_left 
     display: flex
