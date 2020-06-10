@@ -1,5 +1,23 @@
 extends ../layouts/default
 
+mixin renderArticle(a)
+  .cell(class=a.customStyle)
+    if a.badge
+      .articleBadge
+        span #{ a.badge }
+    if a.title  
+      .articleTitle
+        span #{ a.title }
+    if a.imageUrl
+      .articleImage
+        img(src=a.imageUrl)
+    if a.subtitle  
+      .articleSubtitle
+        span #{ a.subtitle }
+    if a.paragraph  
+      .articleParagraph
+        | !{ a.paragraph }
+
 block content
   .newshub_container
     .newshub
@@ -28,52 +46,18 @@ block content
         // normalArticles 
         .column_left
           for a in content.normalArticles
-            // normal cell
-            .normal_cell(class=a.customStyle)
-              if a.badge
-                .articleBadge
-                  span #{ a.badge }
-              if a.title  
-                .articleTitle
-                  span #{ a.title }
-              if a.imageUrl
-                .articleImage
-                  img(src=a.imageUrl)
-              if a.subtitle  
-                .articleSubtitle
-                  span #{ a.subtitle }
-              if a.paragraph  
-                .articleParagraph
-                  | !{ a.paragraph }
+            +renderArticle(a)
         
         // rightArticles
         .column_right
           for a in content.rightArticles
-            // right cell
-            .right_cell(class=a.customStyle)
-              if a.badge
-                .articleBadge
-                  span #{ a.badge }
-              if a.title  
-                .articleTitle
-                  span #{ a.title }
-              if a.imageUrl
-                .articleImage
-                  img(src=a.imageUrl)
-              if a.subtitle  
-                .articleSubtitle
-                  span #{ a.subtitle }
-              if a.paragraph  
-                .articleParagraph
-                  | !{ a.paragraph }
+            +renderArticle(a)
 
         // sidebar middle
         if content.sidebarMiddle
           #sidebar_middle
             a(href=content.sidebarMiddle.linkUrl)
               img(src=content.sidebarMiddle.imageUrl)
-
-        
           
           .endline
 

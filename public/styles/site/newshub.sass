@@ -45,28 +45,15 @@ $badgeFont: 'Russo One', sans-serif
   display: flex
   justify-content: center
   flex-wrap: wrap
-.column_left 
-  max-width: 744px
-@media screen and (max-width: 760px) 
-  .column_left 
-    display: flex
-    justify-content: center
-    flex-wrap: wrap
-.column_right 
-  width: 227px
-#sidebar_middle
-  width: 299px
 
-//common articles
-.normal_cell
-  height: 170px
-  max-width: 372px
-  padding: 0px 0px 0px 10px
+// all article cells
+.cell
   margin: 0px 0px 10px 0px
   overflow: hidden
-  float: left
+
   &:hover 
     background-color: black
+    cursor: hand
   .articleBadge
     background-color: rgb(147, 51, 51)
     display: inline-block
@@ -79,55 +66,64 @@ $badgeFont: 'Russo One', sans-serif
   .articleTitle 
     color: $headerColour
     font-family: $headerFont
-    font-size: 17px
     margin: 0px 0px 3px 0px
   .articleImage 
-    max-width: 150px
+    margin: 0px 10px 0px 0px
+
+// left column
+.column_left 
+  max-width: 744px
+
+  .cell
+    height: 170px
+    max-width: 372px
+    padding: 0px 0px 0px 10px
     float: left
-    margin: 0px 10px 0px 0px
-    img 
+
+    .articleTitle 
+      font-size: 17px
+    .articleImage 
       max-width: 150px
-  .articleSubtitle 
-    display: none
-  .articleParagraph 
-    margin: 0px 0px 10px 0px
- 
-//right articles
-.right_cell 
+      float: left
+      img 
+        max-width: 150px
+    .articleSubtitle 
+      display: none
+    .articleParagraph 
+      margin: 0px 0px 10px 0px
+
+@media screen and (max-width: 760px) 
+  .column_left 
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
+// right column
+.column_right 
   width: 227px
-  padding: 0px 10px 0px 10px
-  margin: 0px 0px 10px 0px
-  overflow: hidden
-  display: flex
-  flex-direction: column
-  align-items: baseline
-  &:hover
-    background-color: black
-  .articleBadge
-    background-color: rgb(147, 51, 51)
-    display: block
-    padding: 1px 10px
-    min-width: 80px
-    text-align: center
-    margin: 0px 0px 5px 0px
-    font-size: 13px
-    font-family: $badgeFont
-  .articleTitle
-    color: $headerColour
-    font-family: $headerFont
-    font-size: 15px
-    margin: 0px 0px 3px 0px
-    order: 2
-  .articleImage
-    margin: 0px 10px 0px 0px
-    order: 1
-    img
-      max-width: 217px
-  .articleSubtitle
-    order: 3
-  .articleParagraph
-    order: 4
-    
+
+  .cell
+    width: 227px
+    padding: 0px 10px 0px 10px
+    display: flex
+    flex-direction: column
+    align-items: baseline
+    .articleTitle
+      font-size: 15px
+      order: 2
+    .articleImage
+      order: 1
+      img
+        max-width: 217px
+    .articleSubtitle
+      order: 3
+    .articleParagraph
+      order: 4
+
+
+#sidebar_middle
+  width: 299px
+
 //hero
 .styleHero
   height: 530px
