@@ -3,20 +3,16 @@ extends ../layouts/default
 mixin renderArticle(a)
   .cell(class=a.customStyle)
     if a.badge
-      .articleBadge
-        span #{ a.badge }
+      .articleBadge #{ a.badge }
     if a.title  
-      .articleTitle
-        span #{ a.title }
+      .articleTitle #{ a.title }
     if a.imageUrl
       .articleImage
         img(src=a.imageUrl)
     if a.subtitle  
-      .articleSubtitle
-        span #{ a.subtitle }
+      .articleSubtitle #{ a.subtitle }
     if a.paragraph  
-      .articleParagraph
-        | !{ a.paragraph }
+      .articleParagraph !{ a.paragraph }
 
 block content
   .newshub_container
