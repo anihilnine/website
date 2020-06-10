@@ -1,7 +1,8 @@
 extends ../layouts/default
 
 mixin renderArticle(a)
-  .cell(class=a.customStyle)
+  - var hoverCssClass = a.linkUrl ? "hoverable" : "";
+  .cell(class=a.customStyle + " " + hoverCssClass, data-url=a.linkUrl)
     if a.badge
       .articleBadge !{ a.badge }
     if a.title  
@@ -57,3 +58,12 @@ block content
           
           .endline
 
+block js
+  script(type='text/javascript').
+    $(".hoverable").each(function() {
+      var cell = $(this);
+      var url = cell.attr("data-url");
+      cell.click(function() {
+        window.location.href = url;
+      })
+    })
