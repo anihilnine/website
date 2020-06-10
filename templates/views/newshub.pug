@@ -3,14 +3,14 @@ extends ../layouts/default
 mixin renderArticle(a)
   .cell(class=a.customStyle)
     if a.badge
-      .articleBadge #{ a.badge }
+      .articleBadge !{ a.badge }
     if a.title  
-      .articleTitle #{ a.title }
+      .articleTitle !{ a.title }
     if a.imageUrl
       .articleImage
         img(src=a.imageUrl)
     if a.subtitle  
-      .articleSubtitle #{ a.subtitle }
+      .articleSubtitle !{ a.subtitle }
     if a.paragraph  
       .articleParagraph !{ a.paragraph }
 
