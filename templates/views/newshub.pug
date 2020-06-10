@@ -59,11 +59,4 @@ block content
           .endline
 
 block js
-  script(type='text/javascript').
-    $(".hoverable").each(function() {
-      var cell = $(this);
-      var url = cell.attr("data-url");
-      cell.click(function() {
-        window.location.href = url;
-      })
-    })
+  script(src="/js/newshub.min.js")
