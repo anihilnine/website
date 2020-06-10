@@ -52,8 +52,8 @@ $badgeFont: 'Russo One', sans-serif
   overflow: hidden
 
   &:hover 
-    background-color: black
-    cursor: hand
+    background-color: #282833
+    cursor: pointer
   .articleBadge
     background-color: rgb(147, 51, 51)
     display: inline-block
@@ -81,7 +81,7 @@ $badgeFont: 'Russo One', sans-serif
 
   // golden
   &.styleGolden
-    background: url(/images/newshub-highlight.jpg) repeat-y 1px 0px
+    background: inherit url(/images/newshub-highlight.jpg) repeat-y 1px 0px
     .articleBadge
       background-color: rgb(215, 148, 6)
     .articleTitle
@@ -92,7 +92,7 @@ $badgeFont: 'Russo One', sans-serif
       color: rgb(179, 178, 113)
     a
       color: rgb(255, 174, 0)
-
+      
   // no titles
   &.styleNoTitles
     .articleTitle
@@ -153,7 +153,7 @@ $badgeFont: 'Russo One', sans-serif
       &.styleNoTitles
         .articleSubtitle
           display: none
-          
+
 @media screen and (max-width: 760px) 
   .column_left 
     display: flex
