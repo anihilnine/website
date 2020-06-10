@@ -67,8 +67,30 @@ $badgeFont: 'Russo One', sans-serif
     color: $headerColour
     font-family: $headerFont
     margin: 0px 0px 3px 0px
+  .articleSubtitle
+    display: none
+    color: $headerColour
+    font-family: $headerFont
   .articleImage 
     margin: 0px 10px 0px 0px
+
+  //nomads
+  &.styleNomads
+    .articleBadge
+      background-color: #dd7e2e
+
+  &.styleGolden
+    background: url(/images/newshub-highlight.jpg) repeat-y 1px 0px
+    .articleBadge
+      background-color: rgb(215, 148, 6)
+    .articleTitle
+      color: rgb(255, 174, 0)
+    .articleSubtitle
+      color: rgb(255, 174, 0)
+    .articleParagraph
+      color: rgb(179, 178, 113)
+    a
+      color: rgb(255, 174, 0)
 
 // left column
 .column_left 
@@ -92,6 +114,34 @@ $badgeFont: 'Russo One', sans-serif
     .articleParagraph 
       margin: 0px 0px 10px 0px
 
+    &.styleHero
+      height: 530px
+      padding: 0px 10px 10px 10px
+      margin: 0px 0px 10px 0px
+      float: left
+      display: flex
+      flex-direction: column
+      align-items: baseline
+      .articleBadge
+        min-width: 80px
+      .articleTitle
+        font-size: 30px
+        margin: 0px 0px 3px 0px
+        order: 2
+      .articleImage
+        order: 1
+        img
+          max-width: 352px
+          order: 1
+      .articleSubtitle
+        display: block
+        font-size: 16px
+        margin: 0px 0px 2px 0px
+        order: 3
+      .articleParagraph
+        margin: 0px 0px 10px 0px
+        order: 4
+        
 @media screen and (max-width: 760px) 
   .column_left 
     display: flex
@@ -123,57 +173,6 @@ $badgeFont: 'Russo One', sans-serif
 
 #sidebar_middle
   width: 299px
-
-//hero
-.styleHero
-  height: 530px
-  padding: 0px 10px 10px 10px
-  margin: 0px 0px 10px 0px
-  float: left
-  display: flex
-  flex-direction: column
-  align-items: baseline
-  .articleBadge
-    min-width: 80px
-  .articleTitle
-    color: $headerColour
-    font-family: $headerFont
-    font-size: 30px
-    margin: 0px 0px 3px 0px
-    order: 2
-  .articleImage
-    order: 1
-    img
-      max-width: 352px
-      order: 1
-  .articleSubtitle
-    display: block
-    color: $headerColour
-    font-family: $headerFont
-    font-size: 16px
-    margin: 0px 0px 2px 0px
-    order: 3
-  .articleParagraph
-    margin: 0px 0px 10px 0px
-    order: 4
-
-//nomads
-.styleNomads
-  .articleBadge
-    background-color: #dd7e2e
-
-//golden
-.styleGolden
-  background: url(/images/newshub-highlight.jpg) repeat-y 1px 0px
-  .articleBadge
-    background-color: rgb(215, 148, 6)
-  .articleTitle
-    color: rgb(255, 174, 0)
-  .articleSubtitle
-    color: rgb(255, 174, 0)
-  .articleParagraph
-    color: rgb(179, 178, 113)
-
 
 .endline
   max-width: 1270px
