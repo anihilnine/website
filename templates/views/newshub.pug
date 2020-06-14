@@ -48,7 +48,7 @@ block content
       // sidebar right
       if content.sidebarRight
         #sidebar_right(style="background:#" + content.sidebarRight.backgroundcolor)
-          +showEditor(content.sidebarLeft)
+          +showEditor(content.sidebarRight)
           a(href=content.sidebarRight.linkUrl)
             img(src=content.sidebarRight.imageUrl)
 
@@ -67,7 +67,7 @@ block content
         // sidebar middle
         if content.sidebarMiddle
           #sidebar_middle          
-            +showEditor(content.sidebarLeft)
+            +showEditor(content.sidebarMiddle)
             a(href=content.sidebarMiddle.linkUrl)
               img(src=content.sidebarMiddle.imageUrl)
           
