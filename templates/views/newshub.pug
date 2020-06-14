@@ -1,8 +1,14 @@
 extends ../layouts/default
 
+
+mixin showEditor(a)
+  if true
+    a(href="https://direct.faforever.com/wp-admin/post.php?action=edit&post=" + a.id).editMode edit !{ a.sortIndex }
+
 mixin renderArticle(a)
   - var hoverCssClass = a.linkUrl ? "hoverable" : "";
   .cell(class=a.customStyle + " " + hoverCssClass, data-url=a.linkUrl)
+    +showEditor(a)
     if a.badge
       .articleBadge !{ a.badge }
     if a.title  
@@ -16,12 +22,18 @@ mixin renderArticle(a)
       .articleParagraph !{ a.paragraph }
 
 block content
+  style(type='text/css').
+      .editMode {
+          color:yellow !important;
+      }
+
   .newshub_container
     .newshub
     
       // top bar
       if content.topbar
         .announcement
+          +showEditor(content.topbar)
           a(href=content.topbar.linkUrl)
             div(style="background:#" + content.topbar.backgroundcolor)
               | !{ content.topbar.paragraph }
@@ -29,12 +41,14 @@ block content
       // sidebar left
       if content.sidebarLeft
         #sidebar_left(style="background:#" + content.sidebarLeft.backgroundcolor)
+          +showEditor(content.sidebarLeft)
           a(href=content.sidebarLeft.linkUrl)
             img(src=content.sidebarLeft.imageUrl)
 
       // sidebar right
       if content.sidebarRight
         #sidebar_right(style="background:#" + content.sidebarRight.backgroundcolor)
+          +showEditor(content.sidebarLeft)
           a(href=content.sidebarRight.linkUrl)
             img(src=content.sidebarRight.imageUrl)
 
@@ -52,7 +66,8 @@ block content
 
         // sidebar middle
         if content.sidebarMiddle
-          #sidebar_middle
+          #sidebar_middle          
+            +showEditor(content.sidebarLeft)
             a(href=content.sidebarMiddle.linkUrl)
               img(src=content.sidebarMiddle.imageUrl)
           
